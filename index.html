@@ -3,22 +3,41 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AR Tree</title>
+  <!-- Google model-viewer komponenta -->
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <style>
+    body { margin:0; padding:0; }
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      background: white;
+      opacity: 0.7;
+      padding: 5px;
+      font-family: sans-serif;
+      font-size: 0.8em;
+    }
+  </style>
 </head>
-<body style="margin:0;padding:0;">
+<body>
 
 <model-viewer
-  src="tree.glb"       <!-- zamijeni s imenom svog GLB fajla -->
+  src="tree.glb"                  <!-- zamijeni s imenom svog GLB fajla -->
   alt="Tree Model"
   ar
   ar-modes="webxr scene-viewer quick-look"
   environment-image="neutral"
+  camera-controls
+  auto-rotate
+  shadow-intensity="1"
+  scale="2 2 2"                   <!-- povećaj model, možeš mijenjati po potrebi -->
   style="width:100vw;height:100vh;">
 </model-viewer>
 
-<p style="position:fixed;bottom:0;width:100%;text-align:center;background:white;">
-Model by Original Author Daniel (Sketchfab)
-</p>
+<footer>
+  Model by Original Author (Sketchfab)
+</footer>
 
 </body>
 </html>
